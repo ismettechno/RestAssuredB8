@@ -72,8 +72,14 @@ public class _01_ApiTest {
         // places dizisinin herhangi bir elemanında  "Dörtağaç Köyü" değerinin
         // olduğunu doğrulayınız
 
-
-
+        given()
+                .when()
+                .get("http://api.zippopotam.us/tr/01000")
+                .then()
+                .log().body()
+                .body("places[2].'place name'", equalTo("Dörtağaç Köyü")) // 2 indexdeki eleman buna eşit mi
+                .body("places.'place name'", hasItem("Dörtağaç Köyü"))  // tum placelerde bu eleman var mı
+        ;
     }
 
 
