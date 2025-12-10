@@ -68,7 +68,9 @@ public class _01_ApiTest {
 
     @Test
     public void checkHasItem() {
-
+        // Soru : "http://api.zippopotam.us/tr/01000"  endpoint in dönen
+        // places dizisinin herhangi bir elemanında  "Dörtağaç Köyü" değerinin
+        // olduğunu doğrulayınız
 
 
     }
