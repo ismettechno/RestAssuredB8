@@ -7,6 +7,7 @@ body.counryName                          body("countryName")
                                          body("places[0]") ilk eleman
                                          body("places[0].state") California
                                          body("places.state") bütün state ler
+                                         body("places.'place name'" )  arada boşluk olur ise başına sonuna tek tırnak konur
 
 https://jsonpathfinder.com/  bu siteden locatorlar gibi kolaylıkla test edilebilir
 {
