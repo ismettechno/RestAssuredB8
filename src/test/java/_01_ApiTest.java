@@ -49,4 +49,23 @@ public class _01_ApiTest {
         ;
     }
 
+    @Test
+    public void checkCountryInResponseBody()
+    {
+        given()
+                .when()
+                .get("http://api.zippopotam.us/us/90210")
+                .then()
+                .log().body()   // dönüş datasını gösterir  all: bütün bilgiler
+                .contentType(ContentType.JSON)  // donen içerik formatı JSON MI assert
+                .body("country", equalTo("United States"))
+
+        // country yi dışarı almadan
+        // bulundu yeri (path i) vererek içerde assertion yapıyorum.
+        // Bunu hamcrest kütüphanesi yapıyor
+        ;
+    }
+
+
+
 }
