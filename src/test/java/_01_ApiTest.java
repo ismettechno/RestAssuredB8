@@ -66,6 +66,12 @@ public class _01_ApiTest {
         ;
     }
 
+    @Test
+    public void checkHasItem() {
+
+
+
+    }
 
 
 }
