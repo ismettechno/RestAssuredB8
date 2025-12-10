@@ -1,3 +1,4 @@
+import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.*;
@@ -34,6 +35,18 @@ public class _01_ApiTest {
                 .statusCode(200)  // dönen status kod 200 e eşitmi, assert
         ;
 
+    }
+
+    @Test
+    public void contentTypeTest()
+    {
+        given()
+                .when()
+                .get("http://api.zippopotam.us/us/90210")
+                .then()
+                .log().body()   // dönüş datasını gösterir  all: bütün bilgiler
+                .contentType(ContentType.JSON)  // donen içerik formatı JSON MI assert
+        ;
     }
 
 }
