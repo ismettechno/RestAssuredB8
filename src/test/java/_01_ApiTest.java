@@ -109,6 +109,8 @@ public class _01_ApiTest {
                 .body("places.'place name'", hasItem("Beverly Hills")) // assert
                 .body("country", equalTo("United States")) // assert
         ;
+
+
     }
 
 
