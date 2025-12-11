@@ -82,5 +82,36 @@ public class _01_ApiTest {
         ;
     }
 
+    @Test
+    public void bodyArrayHasSizeTest()
+    {
+        given()
+                .when()
+                .get("http://api.zippopotam.us/us/90210")
+                .then()
+                .log().body()
+                .body("places", hasSize(1)) // bu dizi size 1 mi
+        ;
+    }
+
+    @Test
+    public void combiningTest() {
+
+        given()
+
+                .when()
+                .get("http://api.zippopotam.us/us/90210")
+
+                .then()
+                .statusCode(200) // assert
+                .contentType(ContentType.JSON)  // assert
+                .body("places", hasSize(1)) // assert
+                .body("places.'place name'", hasItem("Beverly Hills")) // assert
+                .body("country", equalTo("United States")) // assert
+        ;
+    }
+
+
+
 
 }
