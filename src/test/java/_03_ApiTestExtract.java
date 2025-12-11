@@ -93,7 +93,7 @@ public class _03_ApiTestExtract {
                         .get("https://gorest.co.in/public/v1/users")
 
                         .then()
-                        .extract().response();  // bütün dönen bady alındı
+                        .extract().response();  // bütün dönen bady JSON formatında alındı
 
         ArrayList<Integer> idler=donenBody.path("data.id");
         ArrayList<String> nameler=donenBody.path("data.name");
