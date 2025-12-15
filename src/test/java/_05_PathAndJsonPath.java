@@ -31,6 +31,7 @@ public class _05_PathAndJsonPath {
     @Test
     public void extractingPath2()
     {
+        // Aşağıdaki kod ototmatik dönüşüm yapamadığından hata verecektir
         int postCode=
                 given()
                         .when()
@@ -63,7 +64,7 @@ public class _05_PathAndJsonPath {
 
 
     @Test
-    public void extractPathAll_POJO() {
+    public void extractJsonPath_POJO() {
 
         List<Place> places=
                 given()
