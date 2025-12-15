@@ -72,19 +72,47 @@ public class _06_GoRestUsersTest {
 
     @Test(dependsOnMethods = "GetUserById")
     public void UpdateUser() {
+        Map<String,String> uptUser=new HashMap<>();
+        uptUser.put("name","İsmet Temur");
 
+        given()
+                .spec(reqSpec)
+                .body(uptUser)
 
+                .when()
+                .put("/public/v2/users/"+UserId)
+
+                .then()
+                .statusCode(200)
+                .log().body()
+        ;
     }
 
     @Test(dependsOnMethods = "UpdateUser")
     public void DeleteUser() {
+        given()
+                .spec(reqSpec)
 
+                .when()
+                .delete("/public/v2/users/"+UserId)
+
+                .then()
+                .statusCode(204)
+        ;
 
     }
 
-    @Test(dependsOnMethods = "DeleteUserNegative")
+    @Test(dependsOnMethods = "DeleteUser")
     public void DeleteUserNegative() {
+        given()
+                .spec(reqSpec)
 
+                .when()
+                .delete("/public/v2/users/"+UserId)
+
+                .then()
+                .statusCode(404)
+        ;
 
     }
 
