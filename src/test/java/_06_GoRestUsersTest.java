@@ -56,8 +56,34 @@ public class _06_GoRestUsersTest {
         System.out.println("UserId = " + UserId);
     }
 
-    @Test
+    @Test(dependsOnMethods = "CreateUser")
     public void GetUserById() {
+            given()
+                    .spec(reqSpec)
+
+                    .when()
+                    .get("/public/v2/users/"+UserId)
+
+                    .then()
+                    .statusCode(200)
+                    .body("id", equalTo(UserId))
+            ;
+    }
+
+    @Test(dependsOnMethods = "GetUserById")
+    public void UpdateUser() {
+
+
+    }
+
+    @Test(dependsOnMethods = "UpdateUser")
+    public void DeleteUser() {
+
+
+    }
+
+    @Test(dependsOnMethods = "DeleteUserNegative")
+    public void DeleteUserNegative() {
 
 
     }
