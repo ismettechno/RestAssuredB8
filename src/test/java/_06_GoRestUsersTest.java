@@ -113,7 +113,6 @@ public class _06_GoRestUsersTest {
                 .then()
                 .statusCode(404)
         ;
-
     }
 
 
