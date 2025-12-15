@@ -111,7 +111,7 @@ public class _06_GoRestUsersTest {
                 .delete("/public/v2/users/"+UserId)
 
                 .then()
-                .statusCode(404)
+                .statusCode(407) // Jenkins için 404 407 olarak hatalı çıkması için değiştirildi
         ;
     }
 
